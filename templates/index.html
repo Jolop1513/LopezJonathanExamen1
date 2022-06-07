@@ -69,13 +69,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{url_for('static', filename='Img/barca2.jpg')}}" alt="" class="d-block w-100" width="300px" height="600px">
+          <img src="{{url_for('static', filename='Img/placa3.jpg')}}" alt="" class="d-block w-100" width="300px" height="600px">
         </div>
         <div class="carousel-item">
-          <img src="{{url_for('static', filename='Img/city 2.jpg')}}" class="d-block w-100" alt="..." width="300px" height="600px">
+          <img src="{{url_for('static', filename='Img/placa2.jpg')}}" class="d-block w-100" alt="..." width="300px" height="600px">
         </div>
         <div class="carousel-item">
-          <img src="{{url_for('static', filename='Img/madrid 2.jpg')}}" class="d-block w-100" alt="..." width="300px" height="600px">
+          <img src="{{url_for('static', filename='Img/placa1.jpg')}}" class="d-block w-100" alt="..." width="300px" height="600px">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -89,6 +89,7 @@
     </div>
   </div>
 
+  <h1 style=" font-family: fantasy;" >INGRESO DE DATOS</h1></center>
 
 
   <form action="enviar" method="POST" class="form-group">
@@ -103,6 +104,13 @@
     
     <b><label for="timeU">HORA</label></b>
     <input type="time" class="form-control" name="hora" id="hora_id" /><br />
+
+    <b><label for="prioridadU">TRANSITA O NO</label></b><br>
+
+    <select class="form-control" name="prioridad" id="prioridad_id">
+			<option value="Transita">Transita</option>
+			<option value="Alta">No Transita</option>
+    </select>	<br>
 
 <center>
     <input type="submit" class="btn btn-primary" value="Agregar" />
@@ -128,8 +136,7 @@
      <!-- <span id="idS">1</span>-->
       <span class="card-title" id="llamadaS"> N° LLAMADA</span>
       <span class="card-text" id="placaS"> PLACA VEHÍCULO</span>
-      <span class="card-text" id="fechaS">FECHA</span>
-      <span class="card-text" id="horaS">HORA</span>
+      <span class="card-text" id="fechaS">TRANSITA O NO</span>
     </div>
   </div>
 </main>
@@ -152,37 +159,34 @@ for(var i = 0; i < test.length; i++){
  var placaR = document.createElement('span');
  placaR.setAttribute("id", "placaS");
 
- var fechaR = document.createElement('span');
- fechaR.setAttribute("id", "fechaS");
+ var transitaR = document.createElement('span');
+ transitaR.setAttribute("id", "transitaS");
 
- var horaR = document.createElement('span');
- horaR.setAttribute("id", "horaS");
  
  //Creamos las variable de los datos
 // var txtID = document.createTextNode(test[i].id);
  var txtLlamada = document.createTextNode(test[i].titulo);
  var txtPlaca = document.createTextNode(test[i].placa);
- var txtFecha = document.createTextNode(test[i].fecha);
- var txtHora = document.createTextNode(test[i].hora);
+ var txtTransita = document.createTextNode(test[i].transita);
+
 
 // ID.appendChild(txtID);
  llamadaR.appendChild(txtLlamada);
  placaR.appendChild(txtPlaca);
- fechaR.appendChild(txtFecha);
- horaR.appendChild(txtHora);
+ transitaR.appendChild(txtTransita);
+ 
 
 
 //  card.appendChild(tareaID);
  card.appendChild(llamadaR);
  card.appendChild(placaR);
- card.appendChild(fechaR);
- card.appendChild(horaR);
+ card.appendChild(transitaR);
+
 }
 
-if(test[i].prioridad == 'Alta') {
+if(test[i].transita == 'Transita') {
     card.setAttribute('style', 'background-color: red;')
-  }else if(test[i].prioridad == 'Media'){
-    card.setAttribute('style', 'background-color: Yellow;')
+
   }else{
     card.setAttribute('style', 'background-color: GreenYellow;')
   }
