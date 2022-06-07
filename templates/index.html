@@ -111,10 +111,10 @@
   var container = document.getElementById("lista_autos"), test = {{ datosF | tojson }};
 
 for(var i = 0; i < test.length; i++){
- //Creamos los el contenedor de la tarea
+ //Creamos los el contenedor
   var card = document.createElement('div');
   card.setAttribute("class", "card");
- //Creamos los elementos de la tarea
+ //Creamos los elementos 
  // var tareaID = document.createElement('span');
  // codigoID.setAttribute("id", "idS");
 
@@ -130,38 +130,51 @@ for(var i = 0; i < test.length; i++){
  var horaR = document.createElement('span');
  horaR.setAttribute("id", "horaS");
  
- //Creamos las variable de los datos de cada tarea
+ //Creamos las variable de los datos
 // var txtID = document.createTextNode(test[i].id);
  var txtLlamada = document.createTextNode(test[i].titulo);
  var txtPlaca = document.createTextNode(test[i].placa);
  var txtFecha = document.createTextNode(test[i].fecha);
  var txtHora = document.createTextNode(test[i].hora);
 
-// tareaID.appendChild(txtID);
- tareaLlamada.appendChild(txtLlamada);
- tareaPlaca.appendChild(txtPlaca);
- tareaFecha.appendChild(txtFecha);
- tareaHora.appendChild(txtHora);
+// ID.appendChild(txtID);
+ llamadaR.appendChild(txtLlamada);
+ placaR.appendChild(txtPlaca);
+ fechaR.appendChild(txtFecha);
+ horaR.appendChild(txtHora);
 
 
 //  card.appendChild(tareaID);
- card.appendChild(tareaLlamada);
- card.appendChild(tareaPlaca);
- card.appendChild(tareaFecha);
- card.appendChild(tareaHora);
-
-
- if(test[i].prioridad == 'Alta') {
-   card.setAttribute('style', 'background-color: red;')
- }else if(test[i].prioridad == 'Media'){
-   card.setAttribute('style', 'background-color: Yellow;')
- }else{
-   card.setAttribute('style', 'background-color: GreenYellow;')
- }
-
- container.appendChild(card);
+ card.appendChild(llamadaR);
+ card.appendChild(placaR);
+ card.appendChild(fechaR);
+ card.appendChild(horaR);
 }
+
+if(test[i].prioridad == 'Alta') {
+    card.setAttribute('style', 'background-color: red;')
+  }else if(test[i].prioridad == 'Media'){
+    card.setAttribute('style', 'background-color: Yellow;')
+  }else{
+    card.setAttribute('style', 'background-color: GreenYellow;')
+  }
+
+  container.appendChild(card);
+  
 </script>
 
+
+<center>  
+    <div class="card-group" class="p-3 mb-2 bg-success text-black bg-opacity-25">
+        <div class="card" tyle="height: 100pxx;">
+            <ul class="nav flex-column">
+                <li class="nav-item"><br>
+                    <center> <h4 style=" font-family: fantasy;" >CALL CENTER</h4></center>
+                    <a class="nav-link disabled">Copyright © Derechos Reservados - CALL CENTER</a>
+                </li>
+            </ul>
+        </div>
+    </center>
+  </div>
 
 </html>
