@@ -54,7 +54,7 @@
       place-content: center;
     }
 
-    #tituloS{
+    #llamadaS{
       font-weight: 900;
     }
   </style>
@@ -65,7 +65,7 @@
   <h1 style=" font-family: fantasy;" >CALL CENTER "Pico y Placa"</h1></center>
   <form action="enviar" method="POST" class="form-group">
     <b><label for="llamadaU">N° LLAMADA</label></b>
-    <input type="text" class="form-control" name="llamada" id="llamada_id" placeholder="Ingrese el nombre de la tarea"  HTMLFormElement. reset() /><br />
+    <input type="number" class="form-control" name="llamada" id="llamada_id" placeholder="Ingrese el número de la llamada"  HTMLFormElement. reset() /><br />
 
     <b><label for="placaU">PLACA VEHÍCULO</label></b>
     <input type="text" class="form-control" name="placa" id="placa_id" placeholder="Ingrese el número de placa"/><br />
@@ -85,7 +85,7 @@
   </form>
 
   <form action="{{ url_for('borrar') }}" method="post">
-    <input type="texto" name="palabra"  class="form-control" id="usr" placeholder="Ingrese el nombre de la tarea que desee borrar">
+    <input type="texto" name="palabra"  class="form-control" id="usr" placeholder="Ingrese la llamada que desea borrar">
     <br><button type="submit" class="btn btn-danger mb-2">Eliminar una llamada</button> <br>
 
     <h1 style=" font-family: fantasy;" >LISTADO DE LLAMADAS</h1></center>
@@ -96,12 +96,12 @@
   <div/>
 <main>
   <div id="lista_autos">
-    <div class="card_tarea card">
+    <div class="card_llamada card">
      <!-- <span id="idS">1</span>-->
       <span class="card-title" id="llamadaS"> N° LLAMADA</span>
       <span class="card-text" id="placaS"> PLACA VEHÍCULO</span>
-      <span class="card-text" id="fecha">FECHA</span>
-      <span class="card-text" id="hora">HORA</span>
+      <span class="card-text" id="fechaS">FECHA</span>
+      <span class="card-text" id="horaS">HORA</span>
     </div>
   </div>
 </main>
@@ -118,17 +118,17 @@ for(var i = 0; i < test.length; i++){
  // var tareaID = document.createElement('span');
  // codigoID.setAttribute("id", "idS");
 
- var tareaTitulo = document.createElement('span');
- tareaTitulo.setAttribute("id", "llamadaS");
+ var llamadaR = document.createElement('span');
+ llamadaR.setAttribute("id", "llamadaS");
 
- var tareaCorreo = document.createElement('span');
- tareaCorreo.setAttribute("id", "placaS");
+ var placaR = document.createElement('span');
+ placaR.setAttribute("id", "placaS");
 
- var tareaPrioridad = document.createElement('span');
- tareaPrioridad.setAttribute("id", "fecha");
+ var fechaR = document.createElement('span');
+ fechaR.setAttribute("id", "fechaS");
 
- var tareaPrioridad = document.createElement('span');
- tareaPrioridad.setAttribute("id", "hora");
+ var horaR = document.createElement('span');
+ horaR.setAttribute("id", "horaS");
  
  //Creamos las variable de los datos de cada tarea
 // var txtID = document.createTextNode(test[i].id);
