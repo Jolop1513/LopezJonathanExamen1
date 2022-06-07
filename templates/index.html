@@ -90,4 +90,33 @@
     <input type="texto" name="palabra"  class="form-control" id="usr" placeholder="Ingrese el nombre de la tarea que desee borrar">
     <br><button type="submit" class="btn btn-danger mb-2">Eliminar una llamada</button> <br>
 
-   
+    <h1 style=" font-family: fantasy;" >LISTADO DE LLAMADAS</h1></center>
+    <center>
+    <img src="https://www.pngkit.com/png/full/828-8283588_preguntas-por-competencias-formatos-para-el-rea-de.png" width="35%" height="200px ">
+    </center>
+  </center>
+  <div/>
+<main>
+  <div id="lista_autos">
+    <div class="card_tarea card">
+     <!-- <span id="idS">1</span>-->
+      <span class="card-title" id="tituloS"> N° LLAMADA</span>
+      <span class="card-text" id="correoS"> PLACA VEHÍCULO</span>
+      <span class="card-text" id="fecha">FECHA</span>
+      <span class="card-text" id="hora">HORA</span>
+    </div>
+  </div>
+</main>
+ 
+</body>
+<script>
+  var container = document.getElementById("lista_autos"), test = {{ datosF | tojson }};
+
+for(var i = 0; i < test.length; i++){
+ //Creamos los el contenedor de la tarea
+  var card = document.createElement('div');
+  card.setAttribute("class", "card");
+ //Creamos los elementos de la tarea
+ // var tareaID = document.createElement('span');
+ // codigoID.setAttribute("id", "idS");
+
