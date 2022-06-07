@@ -71,19 +71,17 @@
     <input type="text" class="form-control" name="placa" id="placa_id" placeholder="Ingrese el número de placa"/><br />
 
     <b><label for="dateU">FECHA</label></b>
-    <input type="date" class="form-control" name="fecha" id="fecha_id" placeholder="I"/><br />
+    <input type="date" class="form-control" name="fecha" id="fecha_id"/><br />
     
     <b><label for="timeU">HORA</label></b>
-    <input type="time" class="form-control" name="hora" id="hora_id" placeholder="Ingrese la hora"/><br />
-
-    <b><label for="prioridadU">PRIORIDAD DE LA TAREA</label></b><br>
+    <input type="time" class="form-control" name="hora" id="hora_id" /><br />
 
 <center>
-    <input type="submit" class="btn btn-primary" value="Enviar" />
+    <input type="submit" class="btn btn-primary" value="Agregar" />
   </form>
   
   <form action="{{url_for('borrar')}}" method="post" class="card-body">
-    <button type="submit" class="btn btn-danger mb-2">Eliminar tareas</button>
+    <button type="submit" class="btn btn-danger mb-2">Eliminar llamadas</button>
   </form>
 
   <form action="{{ url_for('borrar') }}" method="post">
@@ -100,8 +98,8 @@
   <div id="lista_autos">
     <div class="card_tarea card">
      <!-- <span id="idS">1</span>-->
-      <span class="card-title" id="tituloS"> N° LLAMADA</span>
-      <span class="card-text" id="correoS"> PLACA VEHÍCULO</span>
+      <span class="card-title" id="llamadaS"> N° LLAMADA</span>
+      <span class="card-text" id="placaS"> PLACA VEHÍCULO</span>
       <span class="card-text" id="fecha">FECHA</span>
       <span class="card-text" id="hora">HORA</span>
     </div>
@@ -120,3 +118,50 @@ for(var i = 0; i < test.length; i++){
  // var tareaID = document.createElement('span');
  // codigoID.setAttribute("id", "idS");
 
+ var tareaTitulo = document.createElement('span');
+ tareaTitulo.setAttribute("id", "llamadaS");
+
+ var tareaCorreo = document.createElement('span');
+ tareaCorreo.setAttribute("id", "placaS");
+
+ var tareaPrioridad = document.createElement('span');
+ tareaPrioridad.setAttribute("id", "fecha");
+
+ var tareaPrioridad = document.createElement('span');
+ tareaPrioridad.setAttribute("id", "hora");
+ 
+ //Creamos las variable de los datos de cada tarea
+// var txtID = document.createTextNode(test[i].id);
+ var txtLlamada = document.createTextNode(test[i].titulo);
+ var txtPlaca = document.createTextNode(test[i].placa);
+ var txtFecha = document.createTextNode(test[i].fecha);
+ var txtHora = document.createTextNode(test[i].hora);
+
+// tareaID.appendChild(txtID);
+ tareaLlamada.appendChild(txtLlamada);
+ tareaPlaca.appendChild(txtPlaca);
+ tareaFecha.appendChild(txtFecha);
+ tareaHora.appendChild(txtHora);
+
+
+//  card.appendChild(tareaID);
+ card.appendChild(tareaLlamada);
+ card.appendChild(tareaPlaca);
+ card.appendChild(tareaFecha);
+ card.appendChild(tareaHora);
+
+
+ if(test[i].prioridad == 'Alta') {
+   card.setAttribute('style', 'background-color: red;')
+ }else if(test[i].prioridad == 'Media'){
+   card.setAttribute('style', 'background-color: Yellow;')
+ }else{
+   card.setAttribute('style', 'background-color: GreenYellow;')
+ }
+
+ container.appendChild(card);
+}
+</script>
+
+
+</html>
